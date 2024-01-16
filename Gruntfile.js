@@ -1,4 +1,4 @@
-const { flatten } = require("lodash");
+
 
 module.exports = function(grunt){
     grunt.initConfig({
@@ -31,27 +31,31 @@ module.exports = function(grunt){
         replace:{
             dev:{
                 options:{
-                    patterns:[{
+                    patterns:[
+                        {
                     match: 'ENDERECO_DO_CSS',
                     replacement: './styles/main.css'
                 },{
                     match: 'ENDERECO_DO_JS',
                     replacement: '../src/scripts/main.js'
-                }]
+                }
+            ]
             },
             files: 
-            [{
+            [
+                {
                 expand: true,
                 flatten: true,
                 src:['src/index.html'],
-                dest:'dev'
+                dest:'dev/'
             }
             
         ]
         },
             dist:{
             options:{
-                patterns:[{
+                patterns:[
+                    {
                 match: 'ENDERECO_DO_CSS',
                 replacement: './styles/main.min.css'
             },
@@ -59,14 +63,15 @@ module.exports = function(grunt){
                 match: 'ENDERECO_DO_JS',
                 replacement: './scripts/main.min.js'
             }
-                ]
+        ]
         },
         files: 
-        [{
+        [
+            {
             expand: true,
             flatten: true,
             src:['prebuild/index.html'],
-            dest:'dist'
+            dest:'dist/'
         }
         
     ]
