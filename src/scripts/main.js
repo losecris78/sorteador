@@ -1,4 +1,4 @@
-const { parseInt } = require("lodash");
+
 
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('form-sorteador').addEventListener('submit',function(event){
@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function(){
         let numeroAleatorio = Math.random() * numeroMaximo;
         numeroAleatorio = Math.round(numeroAleatorio);
 
-        document.getElementById('numero-sorteado').innerText= numeroAleatorio;
-           })
+        document.getElementById('resultado-valor').innerText= numeroAleatorio;
+        document.querySelector('.resultado').computedStyleMap.display = 'block';   })
 })
